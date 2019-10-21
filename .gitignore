@@ -1,5 +1,6 @@
 dist/
 
+src/images/
 src/styles/
 
 node_modules/
