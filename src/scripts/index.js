@@ -3,64 +3,35 @@ let data = [
   {
     title: "Nick Cave and the Bad Seeds",
     thumb: "../images/1.png",
-    videoUrl: "1"
+    videoName: "1"
   },
   {
     title: "Radiohead",
     thumb: "../images/2.png",
-    videoUrl: "2"
+    videoName: "2"
   },
   {
     title: "Fleet Foxes",
     thumb: "../images/3.png",
-    videoUrl: "3"
+    videoName: "3"
   },
   {
     title: "The National",
     thumb: "../images/4.png",
-    videoUrl: "4"
-  },
-  {
-    title: "Nick Cave and the Bad Seeds",
-    thumb: "../images/1.png",
-    videoUrl: "1"
-  },
-  {
-    title: "Radiohead",
-    thumb: "../images/2.png",
-    videoUrl: "2"
-  },
-  {
-    title: "Fleet Foxes",
-    thumb: "../images/3.png",
-    videoUrl: "3"
-  },
-  {
-    title: "The National",
-    thumb: "../images/4.png",
-    videoUrl: "4"
-  },
-  {
-    title: "Nick Cave and the Bad Seeds",
-    thumb: "../images/1.png",
-    videoUrl: "1"
-  },
-  {
-    title: "Radiohead",
-    thumb: "../images/2.png",
-    videoUrl: "2"
-  },
-  {
-    title: "Fleet Foxes",
-    thumb: "../images/3.png",
-    videoUrl: "3"
-  },
-  {
-    title: "The National",
-    thumb: "../images/4.png",
-    videoUrl: "4"
+    videoName: "4"
   }
 ];
+
+document.onkeydown = e => {
+  let pl = document.querySelector(".player");
+  let isActive = pl.classList.contains("active");
+  let keyCode = e.code;
+  let close = document.querySelector(".close");
+
+  if (isActive && keyCode === "Escape") {
+    close.click();
+  }
+};
 
 updateVideo = url => {
   let src = `../images/videos/${url}.mp4`;
@@ -87,7 +58,7 @@ generateVideoThumbs = data => {
     let parent = document.createElement("div");
     parent.classList.add("video-thumb");
     parent.addEventListener("click", togglePlayer);
-    parent.dataset.url = el.videoUrl;
+    parent.dataset.url = el.videoName;
 
     let title = document.createElement("p");
     title.innerText = el.title;
