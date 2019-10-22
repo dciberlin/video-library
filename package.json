@@ -1,9 +1,9 @@
 {
-  "name": "video",
+  "name": "Video Library",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "author": "mahamadi congo",
+  "author": "",
   "scripts": {
     "start": "run-p watch watch:styles",
     "build": "run-s clean clean:styles build:styles copy",
